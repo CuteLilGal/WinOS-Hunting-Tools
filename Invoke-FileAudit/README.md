@@ -4,12 +4,12 @@ A PowerShell script for auditing binaries (DLL, EXE, SYS, ...) on Windows. Colle
 
 ## Features
 
-- **Full metadata per file** — SHA256 hash, signature status, signer certificate details, file version, company, original filename, timestamps
-- **Flexible scope** — single folder or recursive, any extension pattern, exclude filters
-- **Multiple output formats** — CSV, JSON, or pipeline objects
-- **Fast** — parallel processing on PowerShell 7+, provider-level `-Filter` where possible
-- **CI-friendly** — `-OnlyUnsigned` mode with non-zero exit code for pipeline gates
-- **Discoverable** — full `Get-Help` support with examples
+- **Full metadata per file** - SHA256 hash, signature status, signer certificate details, file version, company, original filename, timestamps
+- **Flexible scope** - single folder or recursive, any extension pattern, exclude filters
+- **Multiple output formats** - CSV, JSON, or pipeline objects
+- **Fast** - parallel processing on PowerShell 7+, provider-level `-Filter` where possible
+- **CI-friendly** - `-OnlyUnsigned` mode with non-zero exit code for pipeline gates
+- **Discoverable** - full `Get-Help` support with examples
 
 ## Requirements
 
@@ -49,7 +49,7 @@ powershell -ExecutionPolicy Bypass -File .\Invoke-FileAudit.ps1 -r "C:\Path"
 | `-Format` | `Csv \| Json \| PassThru` | `Csv` | Output format |
 | `-Algorithm` | `MD5 \| SHA1 \| SHA256 \| SHA384 \| SHA512` | `SHA256` | Hash algorithm |
 | `-OnlyUnsigned` | `switch` | off | Emit only problematic signatures; exit 2 if any found |
-| `-ExcludePath` | `string[]` | — | Wildcard patterns to skip, e.g. `*\WinSxS\*` |
+| `-ExcludePath` | `string[]` | - | Wildcard patterns to skip, e.g. `*\WinSxS\*` |
 | `-MaxSizeMB` | `int` | 0 (no limit) | Skip files larger than this |
 | `-Parallel` | `switch` | off | Use `ForEach-Object -Parallel` (PS 7+) |
 | `-ThrottleLimit` | `int` | 8 | Max concurrent threads when `-Parallel` |
@@ -64,10 +64,10 @@ Errors are written to a sibling `.errors.log` file. A summary is printed at the 
 
 ## Use cases
 
-- **Software inventory** — baseline what's deployed on a fleet machine
-- **Threat hunting** — find unsigned or suspiciously-signed binaries in user-writable locations
-- **Supply-chain audit** — compare hashes against a known-good baseline
-- **CI gate** — fail builds that emit unsigned DLLs:
+- **Software inventory** - baseline what's deployed on a fleet machine
+- **Threat hunting** - find unsigned or suspiciously-signed binaries in user-writable locations
+- **Supply-chain audit** - compare hashes against a known-good baseline
+- **CI gate** - fail builds that emit unsigned DLLs:
 
   ```powershell
   .\Invoke-FileAudit.ps1 -Path .\bin -r -OnlyUnsigned
