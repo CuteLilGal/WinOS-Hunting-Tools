@@ -73,7 +73,3 @@ Errors are written to a sibling `.errors.log` file. A summary is printed at the 
   .\Invoke-FileAudit.ps1 -Path .\bin -r -OnlyUnsigned
   if ($LASTEXITCODE -eq 2) { throw "Unsigned binaries in build output" }
   ```
-
-## License
-
-MIT
