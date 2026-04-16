@@ -35,7 +35,7 @@ A PowerShell script for auditing binaries (DLL, EXE, SYS, ...) on Windows. Colle
 If script execution is blocked:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Invoke-FileAudit.ps1 -r "C:\Path"
+powershell -ExecutionPolicy Bypass -File .\Invoke-FileAudit.ps1
 ```
 
 ## Parameters
