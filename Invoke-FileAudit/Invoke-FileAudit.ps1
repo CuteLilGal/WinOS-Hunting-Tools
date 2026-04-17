@@ -1,3 +1,4 @@
+# powershell -ExecutionPolicy Bypass -File .\Invoke-FileAudit.ps1
 <#
 .SYNOPSIS
     Full binary audit: Hash + Authenticode signature + Version info + Metadata.
